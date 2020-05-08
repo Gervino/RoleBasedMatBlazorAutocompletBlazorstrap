@@ -1,0 +1,49 @@
+﻿@page "/griddemo"
+
+<h3>GridDemo - MatBlazor Grid in Blazor</h3>
+<MatTable Items="@prod" Class="mat-elevation-z5">
+    <MatTableHeader>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Qty</th>
+        <th>Price</th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.ProductId</td>
+        <td>@context.ProductName</td>
+        <td>@context.ProductQty</td>
+        <td>@string.Format("${0:f2}", @context.Price)</td>
+    </MatTableRow>
+</MatTable>
+
+@code {
+    public class Product
+    {
+        public string ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int ProductQty { get; set; }
+        public double Price { get; set; }
+
+        public Product(string id, string name, int qty, double price)
+        {
+            ProductId = id;
+            ProductName = name;
+            ProductQty = qty;
+            Price = price;
+        }
+    }
+
+    Product[] prod = new Product[]
+    {
+        new Product("101", "Computer", 2, 800000),
+        new Product("102", "Mouse", 1, 600),
+        new Product("103", "Laptop", 4, 1500000),
+        new Product("104", "Keyboard", 6, 1200),
+        new Product("105", "Printer", 3, 10000),
+        new Product("106", "Pendrive", 2, 1200),
+        new Product("107", "Cable", 8, 800),
+        new Product("108", "HardDisk", 3, 240000),
+        new Product("109", "Monitor", 2, 20000),
+        new Product("110", "Memory Card", 1, 9000)
+    };
+}

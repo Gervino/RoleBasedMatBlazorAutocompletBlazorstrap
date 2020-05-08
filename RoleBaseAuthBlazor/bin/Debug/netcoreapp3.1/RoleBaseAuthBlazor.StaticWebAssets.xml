@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/Identity" Path="C:\Users\kouge\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.3\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/BlazorStrap" Path="C:\Users\kouge\.nuget\packages\blazorstrap\1.3.2-preview1-04\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/MatBlazor" Path="C:\Users\kouge\.nuget\packages\matblazor\2.5.0-preview-005\build\..\staticwebassets\" />
+</StaticWebAssets>

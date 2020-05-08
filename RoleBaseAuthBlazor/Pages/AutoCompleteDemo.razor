@@ -1,0 +1,50 @@
+﻿@page "/autocomplete"
+<h3>AutoCompleteDemo</h3>
+
+<MatAutocompleteList Items="@prodList"
+                     TItem="Product" 
+                     Label="Select"
+                     CustomStringSelector="@(i=> i.Name)"
+                     @bind-Value="@value">
+    <ItemTemplate>
+        <div style="display:flex; flex-direction:row; width:100%;">
+            <div style="flex:1;">@context.Name</div>
+            <div style="width:200px;">@context.Price$</div>
+        </div>
+    </ItemTemplate>
+</MatAutocompleteList>
+
+<p>
+    Selected Value: @( value?.Name)
+</p>
+
+@code {
+    public class Product
+    {
+        public string Name { get; set; }
+        public double Price { get; set; }
+
+        public Product(string name, double price)
+        {
+            Name = name;
+            Price = price;
+        }
+    }
+
+    Product value = null;
+
+    Product[] prodList = new Product[]
+    {
+        new Product("Computer", 800000),
+        new Product("Mouse", 600),
+        new Product("Laptop", 1500000),
+        new Product("Keyboard", 1200),
+        new Product("Printer", 10000),
+        new Product("Pendrive", 1200),
+        new Product("Cable", 800),
+        new Product("HardDisk", 240000),
+        new Product("Monitor", 20000),
+        new Product("Memory Card", 9000)
+    };
+
+}
